@@ -1,0 +1,9 @@
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\bin\Debug\SeeSharpTheaters.exe.config
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\bin\Debug\SeeSharpTheaters.exe
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\bin\Debug\SeeSharpTheaters.pdb
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.Form1.resources
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.Properties.Resources.resources
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.csproj.GenerateResource.Cache
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.exe
+\\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.pdb
