@@ -11,9 +11,9 @@ using System.IO;
 
 namespace SeeSharpTheaters
 {
-    public partial class Form1 : Form
+    public partial class seeSharpForm : Form
     {
-        public Form1()
+        public seeSharpForm()
         {
             InitializeComponent();
         }
@@ -103,6 +103,20 @@ namespace SeeSharpTheaters
 
             orderTotalLabel.Text = "Your Total is: " + total.ToString("C");
             confirmButton.Visible = true;
+        }
+
+        private void surcharge3dBox_CheckedChange(object sender, EventArgs e)
+        {
+            if (surcharge3DBox.Checked == true)
+            {
+                this.BackColor = System.Drawing.Color.Turquoise;
+                realDLogo.Visible = true;
+            }
+            else
+            {
+                this.BackColor = seeSharpForm.DefaultBackColor;
+                realDLogo.Visible = false;
+            }
         }
     }
 }

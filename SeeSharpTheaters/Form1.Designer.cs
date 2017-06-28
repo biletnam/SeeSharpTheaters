@@ -1,6 +1,6 @@
 ﻿namespace SeeSharpTheaters
 {
-    partial class Form1
+    partial class seeSharpForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(seeSharpForm));
             this.label1 = new System.Windows.Forms.Label();
             this.movieListLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.surcharge3DBox = new System.Windows.Forms.CheckBox();
             this.movieTimesFilePathDialog = new System.Windows.Forms.OpenFileDialog();
+            this.realDLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.realDLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +87,7 @@
             // orderTotalLabel
             // 
             this.orderTotalLabel.AutoSize = true;
-            this.orderTotalLabel.Location = new System.Drawing.Point(364, 131);
+            this.orderTotalLabel.Location = new System.Drawing.Point(364, 185);
             this.orderTotalLabel.Name = "orderTotalLabel";
             this.orderTotalLabel.Size = new System.Drawing.Size(70, 13);
             this.orderTotalLabel.TabIndex = 4;
@@ -102,7 +105,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(364, 183);
+            this.label7.Location = new System.Drawing.Point(364, 237);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 13);
             this.label7.TabIndex = 6;
@@ -132,7 +135,7 @@
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(362, 103);
+            this.calculateButton.Location = new System.Drawing.Point(362, 157);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(100, 23);
             this.calculateButton.TabIndex = 10;
@@ -142,7 +145,7 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(362, 151);
+            this.confirmButton.Location = new System.Drawing.Point(362, 205);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(100, 23);
             this.confirmButton.TabIndex = 11;
@@ -190,16 +193,28 @@
             this.surcharge3DBox.TabIndex = 16;
             this.surcharge3DBox.Text = "3D: Check this to buy tickets for 3D";
             this.surcharge3DBox.UseVisualStyleBackColor = true;
+            this.surcharge3DBox.CheckedChanged += new System.EventHandler(this.surcharge3dBox_CheckedChange);
             // 
             // movieTimesFilePathDialog
             // 
             this.movieTimesFilePathDialog.FileName = "openFileDialog1";
             // 
-            // Form1
+            // realDLogo
+            // 
+            this.realDLogo.Image = ((System.Drawing.Image)(resources.GetObject("realDLogo.Image")));
+            this.realDLogo.Location = new System.Drawing.Point(362, 90);
+            this.realDLogo.Name = "realDLogo";
+            this.realDLogo.Size = new System.Drawing.Size(178, 50);
+            this.realDLogo.TabIndex = 17;
+            this.realDLogo.TabStop = false;
+            this.realDLogo.Visible = false;
+            // 
+            // seeSharpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 408);
+            this.Controls.Add(this.realDLogo);
             this.Controls.Add(this.surcharge3DBox);
             this.Controls.Add(this.quantityTextBox);
             this.Controls.Add(this.pinTextBox);
@@ -216,8 +231,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.movieListLabel);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "seeSharpForm";
             this.Text = "Welcome to See Sharp Movie Theater";
+            ((System.ComponentModel.ISupportInitialize)(this.realDLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +258,7 @@
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.CheckBox surcharge3DBox;
         private System.Windows.Forms.OpenFileDialog movieTimesFilePathDialog;
+        private System.Windows.Forms.PictureBox realDLogo;
     }
 }
 
