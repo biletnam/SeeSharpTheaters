@@ -8,3 +8,4 @@
 \\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.pdb
 \\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.seeSharpForm.resources
 \\mac\home\documents\visual studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.confirmation.resources
+\\Mac\Home\Documents\Visual Studio 2015\Projects\SeeSharpTheaters\SeeSharpTheaters\obj\Debug\SeeSharpTheaters.adminPin.resources

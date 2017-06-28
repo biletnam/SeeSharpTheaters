@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(seeSharpForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.pathLabel = new System.Windows.Forms.Label();
             this.movieListLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pinLabel = new System.Windows.Forms.Label();
             this.resultOfLoadLabel = new System.Windows.Forms.Label();
             this.orderTotalLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,39 +46,47 @@
             this.surcharge3DBox = new System.Windows.Forms.CheckBox();
             this.movieTimesFilePathDialog = new System.Windows.Forms.OpenFileDialog();
             this.realDLogo = new System.Windows.Forms.PictureBox();
+            this.adminLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.submitPinLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.incorrectPinLabel = new System.Windows.Forms.Label();
+            this.closeAdminLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.splashPage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.realDLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splashPage)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // pathLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Movie Listings File Path:";
+            this.pathLabel.AutoSize = true;
+            this.pathLabel.Location = new System.Drawing.Point(9, 290);
+            this.pathLabel.Name = "pathLabel";
+            this.pathLabel.Size = new System.Drawing.Size(121, 13);
+            this.pathLabel.TabIndex = 0;
+            this.pathLabel.Text = "Movie Listings File Path:";
             // 
             // movieListLabel
             // 
             this.movieListLabel.AutoSize = true;
-            this.movieListLabel.Location = new System.Drawing.Point(25, 215);
+            this.movieListLabel.Location = new System.Drawing.Point(9, 64);
             this.movieListLabel.Name = "movieListLabel";
             this.movieListLabel.Size = new System.Drawing.Size(0, 13);
             this.movieListLabel.TabIndex = 1;
             // 
-            // label3
+            // pinLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "PIN:";
+            this.pinLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pinLabel.AutoSize = true;
+            this.pinLabel.Location = new System.Drawing.Point(476, 367);
+            this.pinLabel.Name = "pinLabel";
+            this.pinLabel.Size = new System.Drawing.Size(28, 13);
+            this.pinLabel.TabIndex = 2;
+            this.pinLabel.Text = "PIN:";
+            this.pinLabel.Visible = false;
             // 
             // resultOfLoadLabel
             // 
             this.resultOfLoadLabel.AutoSize = true;
-            this.resultOfLoadLabel.Location = new System.Drawing.Point(31, 134);
+            this.resultOfLoadLabel.Location = new System.Drawing.Point(286, 367);
             this.resultOfLoadLabel.Name = "resultOfLoadLabel";
             this.resultOfLoadLabel.Size = new System.Drawing.Size(0, 13);
             this.resultOfLoadLabel.TabIndex = 3;
@@ -104,7 +112,7 @@
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(201, 37);
+            this.browseButton.Location = new System.Drawing.Point(185, 303);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 8;
@@ -114,7 +122,7 @@
             // 
             // loadTimesButton
             // 
-            this.loadTimesButton.Location = new System.Drawing.Point(28, 94);
+            this.loadTimesButton.Location = new System.Drawing.Point(12, 360);
             this.loadTimesButton.Name = "loadTimesButton";
             this.loadTimesButton.Size = new System.Drawing.Size(248, 23);
             this.loadTimesButton.TabIndex = 9;
@@ -149,7 +157,7 @@
             // 
             // showMoviesButton
             // 
-            this.showMoviesButton.Location = new System.Drawing.Point(28, 175);
+            this.showMoviesButton.Location = new System.Drawing.Point(12, 24);
             this.showMoviesButton.Name = "showMoviesButton";
             this.showMoviesButton.Size = new System.Drawing.Size(248, 23);
             this.showMoviesButton.TabIndex = 12;
@@ -159,17 +167,19 @@
             // 
             // filePathTextBox
             // 
-            this.filePathTextBox.Location = new System.Drawing.Point(28, 40);
+            this.filePathTextBox.Location = new System.Drawing.Point(12, 306);
             this.filePathTextBox.Name = "filePathTextBox";
             this.filePathTextBox.Size = new System.Drawing.Size(167, 20);
             this.filePathTextBox.TabIndex = 13;
             // 
             // pinTextBox
             // 
-            this.pinTextBox.Location = new System.Drawing.Point(115, 63);
+            this.pinTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pinTextBox.Location = new System.Drawing.Point(510, 364);
             this.pinTextBox.Name = "pinTextBox";
             this.pinTextBox.Size = new System.Drawing.Size(80, 20);
             this.pinTextBox.TabIndex = 14;
+            this.pinTextBox.Visible = false;
             // 
             // quantityTextBox
             // 
@@ -206,11 +216,80 @@
             this.realDLogo.TabStop = false;
             this.realDLogo.Visible = false;
             // 
+            // adminLinkLabel
+            // 
+            this.adminLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.adminLinkLabel.AutoSize = true;
+            this.adminLinkLabel.Location = new System.Drawing.Point(513, 389);
+            this.adminLinkLabel.Name = "adminLinkLabel";
+            this.adminLinkLabel.Size = new System.Drawing.Size(77, 13);
+            this.adminLinkLabel.TabIndex = 18;
+            this.adminLinkLabel.TabStop = true;
+            this.adminLinkLabel.Text = "Admin Settings";
+            this.adminLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.adminLinkLabel_LinkClicked);
+            // 
+            // submitPinLinkLabel
+            // 
+            this.submitPinLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitPinLinkLabel.AutoSize = true;
+            this.submitPinLinkLabel.Location = new System.Drawing.Point(533, 389);
+            this.submitPinLinkLabel.Name = "submitPinLinkLabel";
+            this.submitPinLinkLabel.Size = new System.Drawing.Size(57, 13);
+            this.submitPinLinkLabel.TabIndex = 19;
+            this.submitPinLinkLabel.TabStop = true;
+            this.submitPinLinkLabel.Text = "Submit Pin";
+            this.submitPinLinkLabel.Visible = false;
+            this.submitPinLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.submitPinLinkLabel_LinkClicked);
+            // 
+            // incorrectPinLabel
+            // 
+            this.incorrectPinLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.incorrectPinLabel.AutoSize = true;
+            this.incorrectPinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectPinLabel.ForeColor = System.Drawing.Color.Red;
+            this.incorrectPinLabel.Location = new System.Drawing.Point(513, 348);
+            this.incorrectPinLabel.Name = "incorrectPinLabel";
+            this.incorrectPinLabel.Size = new System.Drawing.Size(80, 13);
+            this.incorrectPinLabel.TabIndex = 20;
+            this.incorrectPinLabel.Text = "Incorrect Pin";
+            this.incorrectPinLabel.Visible = false;
+            // 
+            // closeAdminLinkLabel
+            // 
+            this.closeAdminLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeAdminLinkLabel.AutoSize = true;
+            this.closeAdminLinkLabel.Location = new System.Drawing.Point(484, 389);
+            this.closeAdminLinkLabel.Name = "closeAdminLinkLabel";
+            this.closeAdminLinkLabel.Size = new System.Drawing.Size(106, 13);
+            this.closeAdminLinkLabel.TabIndex = 21;
+            this.closeAdminLinkLabel.TabStop = true;
+            this.closeAdminLinkLabel.Text = "Close Admin Settings";
+            this.closeAdminLinkLabel.Visible = false;
+            this.closeAdminLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.closeAdminLinkLabel_LinkClicked);
+            // 
+            // splashPage
+            // 
+            this.splashPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splashPage.Image = ((System.Drawing.Image)(resources.GetObject("splashPage.Image")));
+            this.splashPage.Location = new System.Drawing.Point(-2, -3);
+            this.splashPage.Name = "splashPage";
+            this.splashPage.Size = new System.Drawing.Size(605, 412);
+            this.splashPage.TabIndex = 22;
+            this.splashPage.TabStop = false;
+            this.splashPage.Click += new System.EventHandler(this.splashPage_Click);
+            // 
             // seeSharpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 408);
+            this.Controls.Add(this.splashPage);
+            this.Controls.Add(this.closeAdminLinkLabel);
+            this.Controls.Add(this.incorrectPinLabel);
+            this.Controls.Add(this.submitPinLinkLabel);
+            this.Controls.Add(this.adminLinkLabel);
             this.Controls.Add(this.realDLogo);
             this.Controls.Add(this.surcharge3DBox);
             this.Controls.Add(this.quantityTextBox);
@@ -224,13 +303,14 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.orderTotalLabel);
             this.Controls.Add(this.resultOfLoadLabel);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pinLabel);
             this.Controls.Add(this.movieListLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pathLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "seeSharpForm";
             this.Text = "Welcome to See Sharp Movie Theater";
             ((System.ComponentModel.ISupportInitialize)(this.realDLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splashPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,9 +318,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.Label movieListLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label pinLabel;
         private System.Windows.Forms.Label resultOfLoadLabel;
         private System.Windows.Forms.Label orderTotalLabel;
         private System.Windows.Forms.Label label6;
@@ -255,6 +335,11 @@
         private System.Windows.Forms.CheckBox surcharge3DBox;
         private System.Windows.Forms.OpenFileDialog movieTimesFilePathDialog;
         private System.Windows.Forms.PictureBox realDLogo;
+        private System.Windows.Forms.LinkLabel adminLinkLabel;
+        private System.Windows.Forms.LinkLabel submitPinLinkLabel;
+        private System.Windows.Forms.Label incorrectPinLabel;
+        private System.Windows.Forms.LinkLabel closeAdminLinkLabel;
+        private System.Windows.Forms.PictureBox splashPage;
     }
 }
 

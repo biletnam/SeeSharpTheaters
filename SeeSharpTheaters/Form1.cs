@@ -16,12 +16,15 @@ namespace SeeSharpTheaters
         public seeSharpForm()
         {
             InitializeComponent();
+            ShowAdminSettings(isAdmin);
         }
 
         string[] movieListArray = new string[6] { "Casablanca", "Gone With The Wind", "Lawrence of Arabia", "Citizen Kane", "Roman Holiday", "It’s a Wonderful Life" };
         const double SALES_TAX = 0.05;
         const double TICKET_PRICE = 8.00;
         const double SURCHARGE_3D = 2.00;
+        bool isAdmin = false;
+        const string ADMIN_PASSWORD = "ISDS309";
 
 
 
@@ -129,6 +132,54 @@ namespace SeeSharpTheaters
             Form confirmation = new confirmation();
             confirmation.ShowDialog();
             quantityTextBox.Text = "";
+            orderTotalLabel.Text = "";
+            splashPage.Visible = true;
+        }
+
+        private void adminLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pinTextBox.Visible = true;
+            pinLabel.Visible = true;
+            adminLinkLabel.Visible = false;
+            submitPinLinkLabel.Visible = true;
+        }
+        private void ShowAdminSettings(bool isAdmin)
+        {
+            pathLabel.Visible = isAdmin;
+            filePathTextBox.Visible = isAdmin;
+            browseButton.Visible = isAdmin;
+            loadTimesButton.Visible = isAdmin;
+        }
+
+        private void submitPinLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(pinTextBox.Text == ADMIN_PASSWORD)
+            {
+                incorrectPinLabel.Visible = false;
+                pinTextBox.Visible = false;
+                pinTextBox.Text = "";
+                pinLabel.Visible = false;
+                ShowAdminSettings(true);
+                submitPinLinkLabel.Visible = false;
+                closeAdminLinkLabel.Visible = true;
+            }
+            else
+            {
+                incorrectPinLabel.Visible = true;
+            }
+        }
+
+        private void closeAdminLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ShowAdminSettings(false);
+            closeAdminLinkLabel.Visible = false;
+            adminLinkLabel.Visible = true;
+
+        }
+
+        private void splashPage_Click(object sender, EventArgs e)
+        {
+            splashPage.Visible = false;
         }
     }
 }
