@@ -55,7 +55,7 @@ namespace SeeSharpTheaters
                     }
                     reader.Close();
                     fs.Close();
-                    resultOfLoadLabel.Text = "Successfully Loaded Movies";
+                    resultOfLoadLabel.Text = "Movies loaded successfully";
                 }
                 catch (ArgumentException)
                 {
@@ -82,8 +82,13 @@ namespace SeeSharpTheaters
             loadTimesButton.Text = "Load Movie Times";
         }
 
-        private double CalculateTotal(int qty, double price)
+        private double CalculateTotal(int qty, bool surcharge)
         {
+            double price = TICKET_PRICE;
+            if(surcharge == true)
+            {
+                price += SURCHARGE_3D;
+            }
             double postTax = (qty * price) * (1 + SALES_TAX);
             return postTax;
         }
@@ -94,14 +99,7 @@ namespace SeeSharpTheaters
             {
                 double total;
                 int qty = Convert.ToInt32(quantityTextBox.Text);
-                if (surcharge3DBox.Checked)
-                {
-                    total = CalculateTotal(qty, (TICKET_PRICE + SURCHARGE_3D));
-                }
-                else
-                {
-                    total = CalculateTotal(qty, TICKET_PRICE);
-                }
+                total = CalculateTotal(qty, surcharge3DBox.Checked);
 
                 orderTotalLabel.Text = "Your Total is: " + total.ToString("C");
                 confirmButton.Visible = true;

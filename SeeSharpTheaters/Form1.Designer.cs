@@ -227,6 +227,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.movieListLabel);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "seeSharpForm";
             this.Text = "Welcome to See Sharp Movie Theater";
             ((System.ComponentModel.ISupportInitialize)(this.realDLogo)).EndInit();
