@@ -32,7 +32,7 @@
             this.movieListLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.resultOfLoadLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.orderTotalLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
@@ -42,8 +42,8 @@
             this.showMoviesButton = new System.Windows.Forms.Button();
             this.filePathTextBox = new System.Windows.Forms.TextBox();
             this.pinTextBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.quantityTextBox = new System.Windows.Forms.TextBox();
+            this.surcharge3DBox = new System.Windows.Forms.CheckBox();
             this.movieTimesFilePathDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // movieListLabel
             // 
             this.movieListLabel.AutoSize = true;
-            this.movieListLabel.Location = new System.Drawing.Point(25, 232);
+            this.movieListLabel.Location = new System.Drawing.Point(25, 215);
             this.movieListLabel.Name = "movieListLabel";
             this.movieListLabel.Size = new System.Drawing.Size(0, 13);
             this.movieListLabel.TabIndex = 1;
@@ -76,20 +76,19 @@
             // resultOfLoadLabel
             // 
             this.resultOfLoadLabel.AutoSize = true;
-            this.resultOfLoadLabel.Location = new System.Drawing.Point(25, 136);
+            this.resultOfLoadLabel.Location = new System.Drawing.Point(31, 134);
             this.resultOfLoadLabel.Name = "resultOfLoadLabel";
-            this.resultOfLoadLabel.Size = new System.Drawing.Size(157, 13);
+            this.resultOfLoadLabel.Size = new System.Drawing.Size(0, 13);
             this.resultOfLoadLabel.TabIndex = 3;
-            this.resultOfLoadLabel.Text = "Success or Error Message Here";
             // 
-            // label5
+            // orderTotalLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Your Total Is:";
+            this.orderTotalLabel.AutoSize = true;
+            this.orderTotalLabel.Location = new System.Drawing.Point(364, 131);
+            this.orderTotalLabel.Name = "orderTotalLabel";
+            this.orderTotalLabel.Size = new System.Drawing.Size(70, 13);
+            this.orderTotalLabel.TabIndex = 4;
+            this.orderTotalLabel.Text = "Your Total Is:";
             // 
             // label6
             // 
@@ -128,6 +127,8 @@
             this.loadTimesButton.Text = "Load Movie Times";
             this.loadTimesButton.UseVisualStyleBackColor = true;
             this.loadTimesButton.Click += new System.EventHandler(this.loadTimesButton_Click);
+            this.loadTimesButton.MouseLeave += new System.EventHandler(this.loadTimesButtom_MouseLeave);
+            this.loadTimesButton.MouseHover += new System.EventHandler(this.loadTimesButton_MouseHover);
             // 
             // calculateButton
             // 
@@ -137,6 +138,7 @@
             this.calculateButton.TabIndex = 10;
             this.calculateButton.Text = "Calculate Total";
             this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // confirmButton
             // 
@@ -146,10 +148,11 @@
             this.confirmButton.TabIndex = 11;
             this.confirmButton.Text = "Confirm Order";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Visible = false;
             // 
             // showMoviesButton
             // 
-            this.showMoviesButton.Location = new System.Drawing.Point(28, 192);
+            this.showMoviesButton.Location = new System.Drawing.Point(28, 175);
             this.showMoviesButton.Name = "showMoviesButton";
             this.showMoviesButton.Size = new System.Drawing.Size(248, 23);
             this.showMoviesButton.TabIndex = 12;
@@ -171,22 +174,22 @@
             this.pinTextBox.Size = new System.Drawing.Size(80, 20);
             this.pinTextBox.TabIndex = 14;
             // 
-            // textBox3
+            // quantityTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(362, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 15;
+            this.quantityTextBox.Location = new System.Drawing.Point(362, 40);
+            this.quantityTextBox.Name = "quantityTextBox";
+            this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.quantityTextBox.TabIndex = 15;
             // 
-            // checkBox1
+            // surcharge3DBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(362, 66);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(194, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "3D: Check this to buy tickets for 3D";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.surcharge3DBox.AutoSize = true;
+            this.surcharge3DBox.Location = new System.Drawing.Point(362, 66);
+            this.surcharge3DBox.Name = "surcharge3DBox";
+            this.surcharge3DBox.Size = new System.Drawing.Size(194, 17);
+            this.surcharge3DBox.TabIndex = 16;
+            this.surcharge3DBox.Text = "3D: Check this to buy tickets for 3D";
+            this.surcharge3DBox.UseVisualStyleBackColor = true;
             // 
             // movieTimesFilePathDialog
             // 
@@ -197,8 +200,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 408);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.surcharge3DBox);
+            this.Controls.Add(this.quantityTextBox);
             this.Controls.Add(this.pinTextBox);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.showMoviesButton);
@@ -208,7 +211,7 @@
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.orderTotalLabel);
             this.Controls.Add(this.resultOfLoadLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.movieListLabel);
@@ -226,7 +229,7 @@
         private System.Windows.Forms.Label movieListLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label resultOfLoadLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label orderTotalLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button browseButton;
@@ -236,8 +239,8 @@
         private System.Windows.Forms.Button showMoviesButton;
         private System.Windows.Forms.TextBox filePathTextBox;
         private System.Windows.Forms.TextBox pinTextBox;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox quantityTextBox;
+        private System.Windows.Forms.CheckBox surcharge3DBox;
         private System.Windows.Forms.OpenFileDialog movieTimesFilePathDialog;
     }
 }
