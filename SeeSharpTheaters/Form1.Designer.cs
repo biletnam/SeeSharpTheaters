@@ -35,7 +35,6 @@
             this.resultOfLoadLabel = new System.Windows.Forms.Label();
             this.orderTotalLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
             this.loadTimesButton = new System.Windows.Forms.Button();
             this.calculateButton = new System.Windows.Forms.Button();
@@ -86,30 +85,22 @@
             // 
             // orderTotalLabel
             // 
+            this.orderTotalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.orderTotalLabel.AutoSize = true;
             this.orderTotalLabel.Location = new System.Drawing.Point(364, 185);
             this.orderTotalLabel.Name = "orderTotalLabel";
-            this.orderTotalLabel.Size = new System.Drawing.Size(70, 13);
+            this.orderTotalLabel.Size = new System.Drawing.Size(0, 13);
             this.orderTotalLabel.TabIndex = 4;
-            this.orderTotalLabel.Text = "Your Total Is:";
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(359, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "How many tickets?";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(364, 237);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Order Number";
             // 
             // browseButton
             // 
@@ -135,6 +126,7 @@
             // 
             // calculateButton
             // 
+            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.calculateButton.Location = new System.Drawing.Point(362, 157);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(100, 23);
@@ -145,13 +137,15 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(362, 205);
+            this.confirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirmButton.Location = new System.Drawing.Point(363, 221);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(100, 23);
             this.confirmButton.TabIndex = 11;
             this.confirmButton.Text = "Confirm Order";
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Visible = false;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // showMoviesButton
             // 
@@ -179,6 +173,7 @@
             // 
             // quantityTextBox
             // 
+            this.quantityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.quantityTextBox.Location = new System.Drawing.Point(362, 40);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
@@ -186,6 +181,7 @@
             // 
             // surcharge3DBox
             // 
+            this.surcharge3DBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.surcharge3DBox.AutoSize = true;
             this.surcharge3DBox.Location = new System.Drawing.Point(362, 66);
             this.surcharge3DBox.Name = "surcharge3DBox";
@@ -201,6 +197,7 @@
             // 
             // realDLogo
             // 
+            this.realDLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.realDLogo.Image = ((System.Drawing.Image)(resources.GetObject("realDLogo.Image")));
             this.realDLogo.Location = new System.Drawing.Point(362, 90);
             this.realDLogo.Name = "realDLogo";
@@ -224,7 +221,6 @@
             this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.loadTimesButton);
             this.Controls.Add(this.browseButton);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.orderTotalLabel);
             this.Controls.Add(this.resultOfLoadLabel);
@@ -247,7 +243,6 @@
         private System.Windows.Forms.Label resultOfLoadLabel;
         private System.Windows.Forms.Label orderTotalLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Button loadTimesButton;
         private System.Windows.Forms.Button calculateButton;

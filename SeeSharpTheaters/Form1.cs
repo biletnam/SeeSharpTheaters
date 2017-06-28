@@ -90,19 +90,26 @@ namespace SeeSharpTheaters
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            double total;
-            int qty = Convert.ToInt32(quantityTextBox.Text);
-            if(surcharge3DBox.Checked)
+            try
             {
-               total = CalculateTotal(qty, (TICKET_PRICE + SURCHARGE_3D));
-            }
-            else
-            {
-               total = CalculateTotal(qty, TICKET_PRICE);
-            }
+                double total;
+                int qty = Convert.ToInt32(quantityTextBox.Text);
+                if (surcharge3DBox.Checked)
+                {
+                    total = CalculateTotal(qty, (TICKET_PRICE + SURCHARGE_3D));
+                }
+                else
+                {
+                    total = CalculateTotal(qty, TICKET_PRICE);
+                }
 
-            orderTotalLabel.Text = "Your Total is: " + total.ToString("C");
-            confirmButton.Visible = true;
+                orderTotalLabel.Text = "Your Total is: " + total.ToString("C");
+                confirmButton.Visible = true;
+            }
+            catch(FormatException)
+            {
+                orderTotalLabel.Text = "That's a strange number of tickets...\nLet's try again.";
+            }
         }
 
         private void surcharge3dBox_CheckedChange(object sender, EventArgs e)
@@ -117,6 +124,13 @@ namespace SeeSharpTheaters
                 this.BackColor = seeSharpForm.DefaultBackColor;
                 realDLogo.Visible = false;
             }
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            Form confirmation = new confirmation();
+            confirmation.ShowDialog();
+            quantityTextBox.Text = "";
         }
     }
 }
